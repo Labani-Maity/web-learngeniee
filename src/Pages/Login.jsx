@@ -108,7 +108,7 @@ const Login = () => {
                         <input type="email"
                             className="form-control"
                             name='email'
-                            value={user.email}
+                            value={user?.email}
                             id="exampleFormControlInput1"
                             placeholder="Enter Your Mail Id"
                             onChange={e => postValidation(e)} />

@@ -15,7 +15,8 @@ const initialState = {
 
 export const registerUser = createAsyncThunk("register", async (user) => {
     try {
-        const result = await axios.post(`https://restfullapinodejs1.onrender.com/api/register`, user)
+        // const result = await axios.post(`https://restfullapinodejs1.onrender.com/api/register`, user)
+        const result = await axios.post(`https://blogserver-for-student-only.onrender.com/api/register`, user)
         return result?.data
 
     }
@@ -28,7 +29,7 @@ export const registerUser = createAsyncThunk("register", async (user) => {
 
 export const loginRequest = createAsyncThunk("login", async (user) => {
     try {
-        const res = await axios.post(`https://restfullapinodejs1.onrender.com/api/login`, user)
+        const res = await axios.post(`https://blogserver-for-student-only.onrender.com/api/login`, user)
         return res?.data
     }
     catch (error) {
@@ -89,8 +90,8 @@ export const AuthSlice = createSlice({
         [registerUser.fulfilled]: (state, { payload }) => {
             if (payload?.success === true) {
                 localStorage.setItem("name", payload.data.name)
-                localStorage.setItem("email", payload?.user.email)
-                localStorage.setItem("mobile", payload?.user.mobile)
+                localStorage.setItem("email", payload?.data.email)
+                localStorage.setItem("mobile", payload?.data.mobile)
                 state.redirectReg = '/login'
                 toast(`hello ${payload?.data?.name},Registered Successfully `)
 

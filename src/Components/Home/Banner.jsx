@@ -25,7 +25,7 @@ const Banner = () => {
                             banner_data?.bannerdata?.map((item, index) => {
                                 return (
                                     <>
-                                        <div className={`carousel-item ${index === 0 ? 'active' : ''}`} style={{ backgroundImage: `url(https://restapinodejs.onrender.com/api/banner/photo/${item?._id})` }}>
+                                        <div className={`carousel-item ${index === 0 ? 'active' : ''}`} style={{ backgroundImage: `url(https://blogserver-for-student-only.onrender.com/api/banner/photo/${item?._id})` }}>
                                             <div className="carousel-container">
                                                 <div className="carousel-content animate__animated animate__fadeInUp">
                                                     <h2>Welcome to <span>{item?.title}</span></h2>
