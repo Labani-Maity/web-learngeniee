@@ -85,7 +85,7 @@ const Registration = () => {
         }
 
     }
-   
+
 
 
 
@@ -125,7 +125,62 @@ const Registration = () => {
             <br />
             <br />
             <br />
-            <div className="container regis_form">
+
+            <div className='form_bdy'>
+                <div className="login-form ">
+                    <div className="text">
+                        REGISTER
+                    </div>
+                    <form>
+                        <div className="field">
+                            <div className="fas fa-envelope" />
+                            <input type="text"
+                                placeholder="Enter Your Name"
+                                name='name'
+                                value={user?.name}
+                                onChange={e => postValidation(e)} />
+                            <span style={{ color: 'red' }}>{error.name}</span>
+
+                        </div>
+                        <div className="field">
+                            <div className="fas fa-envelope" />
+                            <input type="text"
+                                placeholder="Enter Your Mail Id"
+                                name='email'
+                                value={user?.email}
+                                onChange={e => postValidation(e)} />
+                            <span style={{ color: 'red' }}>{error.email}</span>
+
+                        </div>
+                        <div className="field">
+                            <div className="fas fa-lock" />
+                            <input type="password"
+                                placeholder="Enter Your Password"
+                                name='password'
+                                value={user?.password}
+                                onChange={e => postValidation(e)}
+                            />
+                            <span style={{ color: 'red' }}>{error.password}</span>
+
+                        </div>
+                        <div className="field">
+                            <div className="fas fa-mobile-alt" />
+                            <input type="number"
+                                placeholder="Enter Mobile Number"
+                                name='mobile'
+                                value={user?.mobile}
+                                onChange={e => postValidation(e)} />
+                            <span style={{ color: 'red' }}>{error.mobile}</span>
+
+                        </div>
+                        <button type="submit" onClick={SubmitInfo} className="btn btn-primary">REGISTER</button>
+                        <p className='link'>Already register?..<Link to='/login'>Login</Link></p>
+
+                    </form>
+                </div>
+            </div>
+
+            {/* <div className="container regis_form">
                 <h4 style={{ textAlign: 'center' }}> Registration Form</h4>
                 <br />
 
@@ -133,7 +188,7 @@ const Registration = () => {
                     <div className="form-group">
 
                         <input type="text"
-                            className="form-control"
+                            className="form-control "
                             id="exampleFormControlInput1"
                             name='name'
                             value={user?.name}
@@ -184,7 +239,7 @@ const Registration = () => {
                     <p>Already register?..<Link to='/login' style={{ color: 'red' }}>Login</Link></p>
                 </form>
 
-            </div>
+            </div> */}
 
         </>
     )

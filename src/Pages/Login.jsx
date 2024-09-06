@@ -99,34 +99,33 @@ const Login = () => {
             <br />
             <br />
             <br />
-            <div className="container regis_form">
-                <h4 style={{ textAlign: 'center' }}> Login Form</h4>
-                <br />
+            <div className='form_bdy'>           
+            <div className="login-form ">
+                <div className="text">
+                    LOGIN
+                </div>
                 <form>
-
-                    <div className="form-group">
-                        <input type="email"
-                            className="form-control"
-                            name='email'
-                            value={user?.email}
-                            id="exampleFormControlInput1"
-                            placeholder="Enter Your Mail Id"
-                            onChange={e => postValidation(e)} />
+                    <div className="field">
+                        <div className="fas fa-envelope" />
+                        <input type="text" 
+                        placeholder="Enter Your Mail Id"                       
+                        name='email'
+                        value={user?.email}
+                        onChange={e => postValidation(e)} />
                         <span style={{ color: 'red' }}>{error.email}</span>
 
                     </div>
-
-                    <div className="form-group">
-                        <input type="password"
-                            className="form-control"
-                            name='password'
-                            value={user.password}
-                            id="exampleFormControlInput1"
-                            placeholder="Enter Your Password"
-                            onChange={e => postValidation(e)} />
+                    <div className="field">
+                        <div className="fas fa-lock" />
+                        <input type="password" 
+                        placeholder="Enter Your Password" 
+                        name='password'
+                        value={user?.password}
+                        onChange={e => postValidation(e)}
+                        />
                         <span style={{ color: 'red' }}>{error.password}</span>
-                    </div>
 
+                    </div>
                     {
                         loading ? (<>
                             <Puff
@@ -139,21 +138,21 @@ const Login = () => {
                                 wrapperClass=""
                                 visible={true}
                             />
-                                <p>Do you have an account?..<Link onClick={log} to='/register' style={{ color: 'red' }}>Register</Link></p>
+                            <p>Do you have an account?..<Link onClick={log} to='/register' style={{ color: 'red' }}>Register</Link></p>
 
                         </>
                         ) : (
 
                             <>
-                                <button type="submit" onClick={SubmitInfo} className="btn btn-primary">Login</button>
-                                <p>Do you have an account?..<Link onClick={log} to='/register' style={{ color: 'red' }}>Register</Link></p>
+                                <button type="submit" onClick={SubmitInfo} className="btn btn-primary">LOGIN</button>
+                                <p className='link'>Do you have an account?..<Link onClick={log} to='/register'>Register</Link></p>
 
                             </>)
-                    }
-
+                    }                   
                 </form>
-
             </div>
+            </div>
+
 
         </>
     )

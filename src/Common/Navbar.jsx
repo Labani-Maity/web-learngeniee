@@ -41,7 +41,7 @@ const Navbar = () => {
                 {
                   Logouttoggle ? (
                     <>
-                    <NavLink className="nav-link" to='/userdetail'>Hi..{name}</NavLink>
+                    <NavLink style={{backgroundColor:"#1cee1a"}} className="nav-link" to='/userdetail'>Hi..{name}</NavLink>
                     <NavLink className="nav-link" onClick={logOut}>LogOut</NavLink>
 
             </>
